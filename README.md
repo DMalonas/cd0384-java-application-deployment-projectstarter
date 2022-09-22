@@ -1,6 +1,6 @@
 # UdaSecurity
 
-![UdaSecurity Logo](UdaSecurity.png)
+![UdaSecurity Logo](Downloads/cd0384-java-application-deployment-projectstarter/starter/UdaSecurity.png)
 
 Your company, **Udasecurity**, has created a home security application. This application tracks the status of sensors, monitors camera input, and changes the alarm state of the system based on inputs. Users can arm the system for when they’re home or away as well as disarm the system.
 
@@ -17,7 +17,7 @@ The project has already been moved into a maven file structure for you, but you�
 
 You'll know you've added all of the correct dependencies when the project runs without errors.
 
-![starter pom.xml file](pom_xml.png)
+![starter pom.xml file](Downloads/cd0384-java-application-deployment-projectstarter/starter/pom_xml.png)
 
 ## Section 2: Split the Image Service into its Own Project
 
@@ -42,13 +42,13 @@ You do **NOT** need to test the Image Service or the Repository, so you should u
 
 Each of the requirements below should be verified by one or more unit tests. All of these test the **Security Service**, so make sure your tests don't depend on the implementation of the Repository or the Image Service. *Remember, you can use ****`Mocks`**** to replace these services in your unit tests.*
 
-You should also write interfaces to describe the necessary behaviors of your dependencies to make them easier to Mock. We’re already using a SecurityRepository interface, but we have no interface to describe the behavior of our Image Service. Create an interface that makes it easy to test our application regardless of whether we’re using the `AwsImageService` or `FakeImageService`. 
+You should also write interfaces to describe the necessary behaviors of your dependencies to make them easier to Mock. We’re already using a SecurityRepository interface, but we have no interface to describe the behavior of our Image Service. Create an interface that makes it easy to test our application regardless of whether we’re using the `com.service.img.AwsImageService` or `com.service.img.FakeImageService`. 
 
 ### *Optional Stand Out Task:* Connect Your Project to the AWS Image Recognition Library
 
-> Once you have created an interface for your image service, complete the steps described in the AwsImageService to create credentials and provide them in a properties file for your application. Change the ImageService implementation class in the CatpointGui class to use the AwsImageService instead of the FakeImageService. Try submitting different types of images and see what comes back!
+> Once you have created an interface for your image service, complete the steps described in the com.service.img.AwsImageService to create credentials and provide them in a properties file for your application. Change the ImageService implementation class in the CatpointGui class to use the com.service.img.AwsImageService instead of the com.service.img.FakeImageService. Try submitting different types of images and see what comes back!
 
-![Image of the Gui](gui_1.png)
+![Image of the Gui](Downloads/cd0384-java-application-deployment-projectstarter/starter/gui_1.png)
 
 **While you are writing tests, it's possible you may need to refactor the application in order to make all of the requirements testable.** For example, parts of the business logic may be contained in the GUI or repository classes. You may have to move this logic into the security service to be tested.
 
@@ -95,16 +95,16 @@ Your task is to make sure all of the Application Requirements are properly imple
  10. If the system is armed, reset all sensors to inactive.
  11. If the system is armed-home _while_ the camera shows a cat, set the alarm status to alarm.
 
-![Image of the Gui](gui_2.png)
+![Image of the Gui](Downloads/cd0384-java-application-deployment-projectstarter/starter/gui_2.png)
 
 ## Section 5: Check Unit Test Coverage
 Use IntelliJ to check code coverage. Our goal is to cover everything in the Security Service. Other teams will be maintaining our Image Service so we’ll focus strictly on the behavior of the Security Service. 
 
-![code coverage](code_coverage_1.png)
+![code coverage](Downloads/cd0384-java-application-deployment-projectstarter/starter/code_coverage_1.png)
 
 **Your goal is to provide full coverage of all methods that implement the application requirements.** You don’t need to test trivial methods like getters or setters, but you do need to make sure that all the lines in your other methods are reachable by the unit tests.
 
-![code coverage](code_coverage_2.png)
+![code coverage](Downloads/cd0384-java-application-deployment-projectstarter/starter/code_coverage_2.png)
 
 ### *Optional Stand Out Task:* Integration Tests
 
@@ -117,7 +117,7 @@ Update your `pom.xml` to use a maven plugin that allows you to compile your appl
 
 Submit a screenshot titled `executable_jar.png` that shows you running the executable jar from the command line and the application launching. Use the command `java -jar [yourjarname]` to run it.
 
-![creating a jar file](jar.png)
+![creating a jar file](Downloads/cd0384-java-application-deployment-projectstarter/starter/jar.png)
 
 ## Section 7: Add Static Analysis to Build
 Add a Reporting tag to your pom that contains the `spotbugs-maven-plugin` and use it to generate a `spotbugs.html` report in your project’s `/target/site` directory. 
@@ -135,4 +135,5 @@ Make sure you have completed all the rubric items [here](https://review.udacity.
 ### Submit your Project
 
 You can submit your project by uploading a zip file or selecting your GitHub repo.
+
 
